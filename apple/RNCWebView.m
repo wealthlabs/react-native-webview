@@ -199,6 +199,8 @@ static NSDictionary* customCertificatesForHost;
 - (WKWebViewConfiguration *)setUpWkWebViewConfig
 {
   WKWebViewConfiguration *wkWebViewConfig = [WKWebViewConfiguration new];
+  [wkWebViewConfig setValue:@TRUE forKey:@"allowUniversalAccessFromFileURLs"];
+  
   WKPreferences *prefs = [[WKPreferences alloc]init];
   BOOL _prefsUsed = NO;
   if (!_javaScriptEnabled) {
